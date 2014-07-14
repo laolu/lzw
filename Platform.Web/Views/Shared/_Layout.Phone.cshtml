@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    @Html.Partial("_alerts")
+    @Html.Partial("_validationSummary")
+    @RenderBody()
+
+    @Scripts.Render("~/js")
+    @Html.Partial("_html5shiv")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

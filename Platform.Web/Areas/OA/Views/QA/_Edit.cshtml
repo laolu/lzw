@@ -1,0 +1,110 @@
+﻿@using Lzw.Common.Extensions
+<div class="row-fluid">
+    <div class="span12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            信息中心
+        </h3>
+        <ul class="breadcrumb">
+            <li><span class="divider"><i class="fa fa-sitemap"></i></span><a href="@Url.Action("Index", "Home", new { @area=""})">平台首页</a><span class="divider"><i class="fa fa-angle-right"></i></span></li>
+            <li><a href="javascript:;">OA办公自动化</a><span class="divider"><i class="fa fa-angle-right"></i></span></li>
+            <li class="active">我的中心</li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+    @{Html.RenderAction("CenterMenu", "MyCenter", new { @area = "OA" });}
+</div>
+
+<div class="row-fluid">
+
+    <div class="portlet box hui tabbable span12">
+        <div class="portlet-title">
+            <div class="caption"><i class="fa fa-calendar"></i> 我的互动</div>
+        </div>
+        <div class="portlet-body form" style="margin:10px;">
+            <div style="text-align:center; color:#ff6600; font-weight:bold; padding-bottom:10px; border-bottom:1px dashed #cccccc; margin-bottom:10px;">
+                <h3>赵勋-新增问题</h3>
+                <p style="color:#2d2d2d; font-weight:normal; ">时间:2013-08-18&nbsp;</p>
+            </div>
+
+            <form action="#" class="horizontal-form">
+                <div class="row-fluid">
+                    <div class="span12">
+
+                        <div class="control-group">
+
+                            <label class="control-label">问题</label>
+
+                            <div class="controls">
+
+                                <textarea class="span12 m-wrap" rows="3"></textarea>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row-fluid">
+
+                    <div class="span6">
+
+                        <div class="control-group">
+
+                            <label class="control-label">问题等级</label>
+
+                            <div class="controls">
+
+                                <select class="span12 m-wrap" tabindex="1">
+
+                                    <option value="Category 1">一级</option>
+
+                                    <option value="Category 2">二级</option>
+
+                                    <option value="Category 3">三级</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="span6">
+                        <div class="control-group">
+
+                            <label class="control-label">解决人选择</label>
+
+                            <div class="controls">
+
+                                <select class="span12 m-wrap" tabindex="1">
+
+                                    <option value="Category 1">赵勋</option>
+
+                                    <option value="Category 2">赵必块</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn blue"><i class="fa fa-floppy-o"></i> 保存</button>
+                    @Ajax.RawActionLink("<i class=\"fa fa-chevron-circle-left\"></i> 返回列表", "Index", "QA", new { @area = "OA" }, new AjaxOptions
+                                            {
+                                                InsertionMode = InsertionMode.Replace,
+                                                HttpMethod = "GET",
+                                                OnFailure = "LoadFailed",
+                                                LoadingElementId = "ajax-loader",
+                                                UpdateTargetId = "ajax_body_content",
+                                            }, new { @class = "btn" })
+                </div>
+            </form>
+
+            <!-- END FORM-->
+
+        </div>
+
+    </div>
+
+</div>

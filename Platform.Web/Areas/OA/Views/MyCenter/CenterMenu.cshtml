@@ -1,0 +1,39 @@
+﻿@using Lzw.Common.Extensions
+@model IList<Platform.Account.Dtos.MenuDto>
+@if (Model != null)
+{
+    int index = 0;
+    string[] colors = new string[] { "green", "blue", "red", "yellow", "blue" };
+    <div class="portlet-body">
+        <div class="row-fluid">
+            <div class="btn-toolbar">
+                @foreach (var m in Model)
+                {
+                    <div class="btn-group" style="width:20%">
+                        <button class="btn span12 @colors[index] dropdown-toggle" data-toggle="dropdown">@m.MenuName<i class="fa fa-chevron-down pull-right"></i></button>
+                        @if (m.SubMenus.Count > 0)
+                        {
+                            <ul class="dropdown-menu" style="width:99%">
+                                @foreach (var item in m.SubMenus)
+                                {
+                                    <li>
+                                        @Ajax.RawActionLink(string.Format("<i class=\"{0}\"></i> {1}</a>", item.MenuIcon, item.MenuName), string.IsNullOrEmpty(item.Action) ? "Index" : item.Action, item.Controller, new { @area = item.Area }, new AjaxOptions
+                                            {
+                                                InsertionMode = InsertionMode.Replace,
+                                                HttpMethod = "GET",
+                                                OnFailure = "LoadFailed",
+                                                LoadingElementId = "ajax-loader",
+                                                UpdateTargetId = "ajax_body_content",
+                                            })
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                        index++;
+                }
+            </div>
+
+        </div>
+    </div>
+}

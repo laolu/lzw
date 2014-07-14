@@ -1,0 +1,11 @@
+﻿@using Lzw.Common.BootstrapSupport
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("LogOff","Home"))
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn">退出</button>
+}

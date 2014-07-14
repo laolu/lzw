@@ -1,0 +1,79 @@
+﻿@using Lzw.Common.BootstrapSupport
+@using Platform.Account.Dtos
+@model UserLoginDto
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="login">
+    <div class="logo">
+        <img src="@Url.Content("~/Content/images/logo.png")"/>
+    </div>
+    <div class="content">
+        <h3 class="form-title">用户登录</h3>
+        @Html.Partial("_alerts")
+        @Html.Partial("_validationSummary")
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-vertical login-form" }))
+        {
+            @Html.AntiForgeryToken()
+            using (Html.ControlGroupFor(Model.LoginName))
+            {
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="fa fa-user"></i>
+                        @Html.TextBoxFor(x => x.LoginName, new { @class = "m-wrap", placeholder = Html.DisplayNameFor(m => m.LoginName) })
+                    </div>
+                    @Html.ValidationMessageFor(x => x.LoginName, null, new { @class = "help-block" })
+                </div>
+
+            }
+            using (Html.ControlGroupFor(Model.Password))
+            {
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="fa fa-user"></i>
+                        @Html.TextBoxFor(x => x.Password, new { @class = "m-wrap", placeholder = Html.DisplayNameFor(m => m.Password) })
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Password, null, new { @class = "help-block" })
+                </div>
+            }
+            using (Html.ControlGroupFor(Model.VerifyCode))
+            {
+                <div class="controls">
+                    <div class="input-icon left">
+                        <i class="fa fa-user"></i>
+                        @Html.TextBoxFor(x => x.VerifyCode, new { @class = "m-wrap verify", placeholder = Html.DisplayNameFor(m => m.VerifyCode) })
+                        <img class="verifyimage" src="@Url.Action("VerifyImage", "Home")" id="VerifyImage" title="看不清？点击换一个" onclick="javascript:document.getElementById('VerifyImage').src='@Url.Action("VerifyImage", "Home")?r='+Math.random();return false;">
+                    </div>
+                    @Html.ValidationMessageFor(x => x.VerifyCode, null, new { @class = "help-block" })
+                </div>
+
+            }
+            <div class="form-actions">
+                <label class="checkbox">
+                    <input type="checkbox" name="remember"/> 记住我 
+                </label>
+                <button type="submit" class="btn green pull-right">登陆</button>
+            </div>
+        }
+    </div>
+        @Scripts.Render("~/js")
+        @Html.Partial("_html5shiv")
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+               // App.initLogin();
+            });
+        </script>
+</body>
+</html>

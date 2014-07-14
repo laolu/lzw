@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+    <style type="text/css">
+    .loading {
+        width: 160px;
+        height: 56px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        line-height: 56px;
+        color: #fff;
+        padding-left: 60px;
+        font-size: 15px;
+        background: #000 url(@Url.Content("~/Content/images/loading.gif")) no-repeat 10px 50%;
+        opacity: 0.7;
+        z-index: 9999;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    }
+    </style>
+</head>
+<body class="page-header-fixed">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        <!-- BEGIN HEADER -->
+        @Html.Partial("_Header")
+        <!-- END HEADER -->
+    </div>
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        @{Html.RenderAction("SysMenu", "Home");}
+        <!-- END SIDEBAR -->
+        <div class="page-content" >
+            <div id="ajax-loader" style="display:none" class="loading">正在加载页面……</div>
+            <!-- BEGIN PAGE CONTAINER-->
+            <div class="container-fluid" id="ajax_body_content">
+                <!-- BEGIN PAGE CONTENT-->
+                @RenderBody()
+                <!-- END PAGE CONTENT-->
+            </div>
+            <!-- END PAGE CONTAINER-->
+        </div>
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    @Html.Partial("_Footer")
+    <!-- END FOOTER -->
+    @Scripts.Render("~/js")
+    @Html.Partial("_html5shiv")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

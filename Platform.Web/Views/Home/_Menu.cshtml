@@ -1,0 +1,59 @@
+﻿@using Lzw.Common.Extensions
+@model IList<Platform.Account.Dtos.MenuDto>
+<div class="page-sidebar nav-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <ul class="page-sidebar-menu">
+        <li>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            <div class="sidebar-toggler hidden-phone"></div>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        </li>
+        <li>
+            <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+            <form class="sidebar-search">
+                <div class="input-box">
+                    <a href="javascript:;" class="remove"></a>
+                    <input type="text" placeholder="Search...">
+                    <input type="button" class="submit" value=" ">
+                </div>
+            </form>
+            <!-- END RESPONSIVE QUICK SEARCH FORM -->
+        </li>
+        <li class="start active J_Menu">
+            <a href="@Url.Action("Index","Home")">
+                <i class="fa fa-home"></i>
+                <span class="title">平台首页</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+        @foreach (var m in Model)
+        {
+            <li class="J_Menu">
+                <a href="javascript:;">
+                    <i class="@m.MenuIcon"></i>
+                    <span class="title">@m.MenuName</span>
+                    <span class="arrow"></span>
+                </a>
+                @if (m.SubMenus.Count > 0)
+                {
+                    <ul class="sub-menu" style="display: none;">
+                        @foreach (var item in m.SubMenus)
+                        {
+                            <li class="J_MenuItem">
+                                @Ajax.RawActionLink(string.Format("<span class=\"title\">{0}</span>", item.MenuName), string.IsNullOrEmpty(item.Action) ? "Index" : item.Action, item.Controller, new { @area = item.Area }, new AjaxOptions
+                           {
+                               InsertionMode = InsertionMode.Replace,
+                               HttpMethod = "GET",
+                               OnFailure = "LoadFailed",
+                               LoadingElementId = "ajax-loader",
+                               UpdateTargetId = "ajax_body_content",
+                           })
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>

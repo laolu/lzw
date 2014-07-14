@@ -1,0 +1,57 @@
+﻿@using Lzw.Common.BootstrapSupport
+@using Platform.Account.Dtos
+@model UserLoginDto
+@{
+    Layout = null;
+    ViewBag.Title = "Login";
+}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    @Html.Partial("_alerts")
+    @Html.Partial("_validationSummary")
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        using (Html.ControlGroupFor(Model.LoginName))
+        {
+            <div class="controls">
+                @Html.TextBoxFor(x => x.LoginName, new { @class = "input-xlarge", placeholder = Html.DisplayNameFor(m => m.LoginName) })
+                @Html.ValidationMessageFor(x => x.LoginName, null, new { @class = "help-inline" })
+            </div>
+
+        }
+        using (Html.ControlGroupFor(Model.Password))
+        {
+            <div class="controls">
+                @Html.TextBoxFor(x => x.Password, new { @class = "input-xlarge", placeholder = Html.DisplayNameFor(m => m.Password) })
+                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "help-inline" })
+            </div>
+
+        }
+        using (Html.ControlGroupFor(Model.VerifyCode))
+        {
+            <div class="controls">
+                <img style="cursor: pointer; vertical-align:middle" src="@Url.Action("VerifyImage", "Home")" id="VerifyImage" title="看不清？点击换一个" onclick="javascript:document.getElementById('VerifyImage').src='@Url.Action("VerifyImage", "Home")?r='+Math.random();return false;">
+                @Html.TextBoxFor(x => x.VerifyCode, new { @class = "input-xlarge", placeholder = Html.DisplayNameFor(m => m.VerifyCode) })
+                @Html.ValidationMessageFor(x => x.VerifyCode, null, new { @class = "help-inline" })
+            </div>
+
+        }
+        <button type="submit" class="btn">登陆</button>
+    }
+    @Scripts.Render("~/js")
+    @Html.Partial("_html5shiv")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

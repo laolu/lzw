@@ -1,0 +1,16 @@
+﻿@Html.AntiForgeryToken()
+<div class="row-fluid">
+    <div class="span12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            人员管理
+        </h3>
+        <ul class="breadcrumb">
+            <li><span class="divider"><i class="fa fa-sitemap"></i></span><a href="@Url.Action("Index", "Home", new { @area=""})">平台首页</a><span class="divider"><i class="fa fa-angle-right"></i></span></li>
+            <li><a href="javascript:;">基础设置</a><span class="divider"><i class="fa fa-angle-right"></i></span></li>
+            <li class="active">人员管理</li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+@Html.Partial("_DataTable")

@@ -1,0 +1,8 @@
+²Î¿¼£ºhttp://blog.csdn.net/kangk1992/article/details/10107363
+1.Enable-Migrations
+2.add-migration Initial
+3.update-database
+4.add-migration
+   http://msdn.microsoft.com/zh-cn/library/system.data.entity.migrations.dbmigration
+
+

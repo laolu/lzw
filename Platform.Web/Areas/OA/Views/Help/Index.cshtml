@@ -1,0 +1,426 @@
+﻿<div class="row-fluid">
+    <div class="span12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <h3 class="page-title">
+            信息中心
+        </h3>
+        <ul class="breadcrumb">
+            <li><span class="divider"><i class="fa fa-sitemap"></i></span><a href="@Url.Action("Index", "Home", new { @area=""})">平台首页</a><span class="divider"><i class="fa fa-angle-right"></i></span></li>
+            <li><a href="javascript:;">OA办公自动化</a><span class="divider"><i class="fa fa-angle-right"></i></span></li>
+            <li class="active">我的中心</li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+    @{Html.RenderAction("CenterMenu", "MyCenter", new { @area = "OA" });}
+</div>
+
+<div class="row-fluid">
+
+    <div class="portlet box hui tabbable span12">
+
+        <div class="portlet-title">
+
+            <div class="caption"><i class="icon-reorder"></i>部门协助</div>
+
+        </div>
+
+        <div class="portlet-body">
+
+            <div class="tabbable portlet-tabs">
+
+                <ul class="nav nav-tabs">
+                    <li><div style=" line-height:40px;"><a href="Helpadd.html" class="btn yellow mini"><i class="icon-plus-sign"></i> 发布协助</a></div></li>
+
+                    <li><a href="#portlet_tab3" data-toggle="tab">我抢答的问题</a></li>
+
+                    <li><a href="#portlet_tab2" data-toggle="tab">我帮忙解决的</a></li>
+
+                    <li class="active"><a href="#portlet_tab1" data-toggle="tab">协助管理</a></li>
+
+                </ul>
+
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="portlet_tab1">
+                        <form action="#" class="form-search pull-right" style="margin-bottom:10px;">
+                            <div class="input-append">
+
+                                <a href="#">
+                                    <button class="btn green" type="button"> 删除</button>
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                        <div class="bs-example">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style=" width:20px;"><div class="checker"><span><input name="" type="checkbox" value=""></span></div></th>
+                                        <th style=" width:10px;">#</th>
+                                        <th style="text-align:center;">事件</th>
+                                        <th style="width:60px;text-align:center;">需求时间</th>
+                                        <th style="width:60px;text-align:center;">发布时间</th>
+                                        <th style="width:50px;text-align:center;">解决人</th>
+                                        <th style="width:60px;text-align:center;">解决时间</th>
+                                        <th style="width:30px;text-align:center;">用时</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>1</td>
+                                        <td style=" display:block; text-align:left;"><a href="helplook.html">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>2</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>3</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>4</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>5</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>6</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>7</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="checker"><span><input name="" type="checkbox" value=""></span></div></td>
+                                        <td>8</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="pagination" style=" float:right; margin-top:10px;">
+
+                                <ul>
+
+                                    <li><a href="#">«</a></li>
+
+                                    <li><a href="#">1</a></li>
+
+                                    <li><a href="#">2</a></li>
+
+                                    <li><a href="#">3</a></li>
+
+                                    <li><a href="#">4</a></li>
+
+                                    <li><a href="#">»</a></li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="portlet_tab2">
+
+                        <div class="bs-example">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style=" width:10px;">#</th>
+                                        <th style="text-align:center;">事件</th>
+                                        <th style="width:60px;text-align:center;">需求时间</th>
+                                        <th style="width:60px;text-align:center;">发布时间</th>
+                                        <th style="width:50px;text-align:center;">解决人</th>
+                                        <th style="width:60px;text-align:center;">解决时间</th>
+                                        <th style="width:30px;text-align:center;">用时</th>
+                                        <th style="width:45px;text-align:center;">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td style=" display:block; text-align:left;"><a href="helplook.html.html">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td>
+                                            <a href="helptodo.html">
+                                                <button type="button" class="btn yellow mini">办理</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>2014.08.18</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                        <td><button type="button" class="btn yellow mini">办理</button></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="pagination" style=" float:right; margin-top:10px;">
+
+                                <ul>
+
+                                    <li><a href="#">«</a></li>
+
+                                    <li><a href="#">1</a></li>
+
+                                    <li><a href="#">2</a></li>
+
+                                    <li><a href="#">3</a></li>
+
+                                    <li><a href="#">4</a></li>
+
+                                    <li><a href="#">»</a></li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="portlet_tab3">
+
+                        <div class="bs-example">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style=" width:10px;">#</th>
+                                        <th style="text-align:center;">问题</th>
+                                        <th style="width:60px;text-align:center;">问题等级</th>
+                                        <th style="width:60px;text-align:center;">发布时间</th>
+                                        <th style="width:50px;text-align:center;">解决人</th>
+                                        <th style="width:60px;text-align:center;">解决时间</th>
+                                        <th style="width:30px;text-align:center;">用时</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td style=" display:block; text-align:left;"><a href="workflow_look.html">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td style=" display:block; text-align:left;"><a href="#">OA的版面出现错位问题</a></td>
+                                        <td>三级别</td>
+                                        <td>2014.08.18</td>
+                                        <td>赵陈勋</td>
+                                        <td>2014.08.28</td>
+                                        <td>10天</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="pagination" style=" float:right; margin-top:10px;">
+
+                                <ul>
+
+                                    <li><a href="#">«</a></li>
+
+                                    <li><a href="#">1</a></li>
+
+                                    <li><a href="#">2</a></li>
+
+                                    <li><a href="#">3</a></li>
+
+                                    <li><a href="#">4</a></li>
+
+                                    <li><a href="#">»</a></li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
